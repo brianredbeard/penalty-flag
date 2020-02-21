@@ -1,5 +1,7 @@
 # Penalty Flag
 
+[![Docker Repository on Quay](https://quay.io/repository/brianredbeard/penalty-box/status "Docker Repository on Quay")](https://quay.io/repository/brianredbeard/penalty-box)
+
 A colorful custom error pages server for use with the NGINX ingress controller
 for Kubernetes.
 
