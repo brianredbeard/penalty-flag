@@ -109,9 +109,9 @@ func errorHandler(path string) func(http.ResponseWriter, *http.Request) {
 			format = "text/html"
 		} else if len(cext) == 0 {
 			log.Printf("couldn't get media type extension. Using %v", ext)
-		} else {
-			ext = cext[0]
+			cext[0] = ext
 		}
+
 		w.Header().Set(ContentType, format)
 
 		errCode := r.Header.Get(CodeHeader)
@@ -122,29 +122,35 @@ func errorHandler(path string) func(http.ResponseWriter, *http.Request) {
 		}
 		w.WriteHeader(code)
 
-		if !strings.HasPrefix(ext, ".") {
-			ext = "." + ext
-		}
-		file := fmt.Sprintf("%v/%v%v", path, code, ext)
-		f, err := os.Open(file)
-		if err != nil {
-			log.Printf("unexpected error opening file: %v", err)
-			scode := strconv.Itoa(code)
-			file := fmt.Sprintf("%v/%cxx%v", path, scode[0], ext)
+		for _, ext = range cext {
+			if !strings.HasPrefix(ext, ".") {
+				ext = "." + ext
+			}
+			file := fmt.Sprintf("%v/%v%v", path, code, ext)
 			f, err := os.Open(file)
 			if err != nil {
-				log.Printf("unexpected error opening file: %v", err)
-				http.NotFound(w, r)
+				if os.Getenv("DEBUG") != "" {
+					log.Printf("unexpected error opening file: %v", err)
+				}
+				scode := strconv.Itoa(code)
+				file := fmt.Sprintf("%v/%cxx%v", path, scode[0], ext)
+				f, err := os.Open(file)
+				if err != nil {
+					if os.Getenv("DEBUG") != "" {
+						log.Printf("unexpected error opening file: %v", err)
+					}
+					continue
+				}
+				defer f.Close()
+				log.Printf("serving custom error response for code %v and format %v from file %v", code, format, file)
+				io.Copy(w, f)
 				return
 			}
 			defer f.Close()
 			log.Printf("serving custom error response for code %v and format %v from file %v", code, format, file)
 			io.Copy(w, f)
-			return
+			break
 		}
-		defer f.Close()
-		log.Printf("serving custom error response for code %v and format %v from file %v", code, format, file)
-		io.Copy(w, f)
 
 		duration := time.Now().Sub(start).Seconds()
 
