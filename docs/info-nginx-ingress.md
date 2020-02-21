@@ -22,10 +22,6 @@ could decide to return the error payload as a JSON document instead of HTML.
     The custom backend is expected to return the correct HTTP status code instead of `200`. NGINX does not change
     the response from the custom default backend.
 
-An example of such custom backend is available inside the source repository at [images/custom-error-pages][img-custom-error-pages].
+This repo serves as an example of just such a server.
 
-See also the [Custom errors][example-custom-errors] example.
-
-[cm-custom-http-errors]: ./nginx-configuration/configmap.md#custom-http-errors
-[img-custom-error-pages]: https://github.com/kubernetes/ingress-nginx/tree/master/images/custom-error-pages
-[example-custom-errors]: ../examples/customization/custom-errors
+[cm-custom-http-errors]: https://github.com/kubernetes/ingress-nginx/blob/cd94ac7f84c61ebb6ba85ad60a8ec73dc4143d02/docs/user-guide/nginx-configuration/configmap.md

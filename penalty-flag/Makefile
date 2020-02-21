@@ -10,7 +10,7 @@ DOCKER?=docker
 SED_I?=sed -i
 GOHOSTOS ?= $(shell go env GOHOSTOS)
 
-PKG=github.com/brianredbeard/color-default/images/custom-error-pages
+PKG=github.com/brianredbeard/color-default/images/penalty-flag
 
 ifeq ($(GOHOSTOS),darwin)
   SED_I=sed -i ''
@@ -32,7 +32,7 @@ ALL_ARCH = amd64 arm arm64 ppc64le
 
 QEMUVERSION=v2.12.0
 
-IMGNAME = custom-error-pages
+IMGNAME = penalty-flag
 IMAGE = $(REGISTRY)/$(IMGNAME)
 MULTI_ARCH_IMG = $(IMAGE)-$(ARCH)
 
@@ -102,7 +102,7 @@ clean:
 build: clean
 	CGO_ENABLED=0 GOOS=${GOOS} GOARCH=${GOARCH} go build -a -installsuffix cgo \
 		-ldflags "-s -w" \
-		-o ${TEMP_DIR}/rootfs/custom-error-pages ${PKG}/...
+		-o ${TEMP_DIR}/rootfs/penalty-flag ${PKG}/...
 
 release: all-container all-push
 	echo "done"

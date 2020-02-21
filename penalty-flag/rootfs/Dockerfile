@@ -18,4 +18,4 @@ CROSS_BUILD_COPY qemu-QEMUARCH-static /usr/bin/
 
 COPY . /
 
-CMD ["/custom-error-pages"]
+CMD ["/penalty-flag"]
