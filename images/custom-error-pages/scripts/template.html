@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error $ERROR_CODE - %{HOSTNAME}</title>
+	<style>
+		html{
+			background-color: $BGCOLOR;
+		}
+
+		$IMAGE
+		
+		$CSS_STYLE
+
+	</style>
+</head>
+
+<body>
+  <div class="$OVERRIDE">
+    <div class="error-middle">
+      <h1>Error $ERROR_CODE - $ERROR_NAME</h1>
+      <p>$ERROR_DESC</p>
+      $DETAILS
+    </div>
+  </div>
+</body>
+</html>
