@@ -1,9 +1,15 @@
 # Penalty Flag
 
-[![Docker Repository on Quay](https://quay.io/repository/brianredbeard/penalty-box/status "Docker Repository on Quay")](https://quay.io/repository/brianredbeard/penalty-box)
-
 A colorful custom error pages server for use with the NGINX ingress controller
 for Kubernetes.
+
+| Container Path | Status | 
+| -------------- | ------ |
+| quay.io/brianredbeard/penalty-flag   |  [![Docker Repository on Quay](https://quay.io/repository/brianredbeard/penalty-flag/status "Docker Repository on Quay")](https://quay.io/repository/brianredbeard/penalty-flag) |
+| quay.io/brianredbeard/penalty-flag-amd64   |  [![Docker Repository on Quay](https://quay.io/repository/brianredbeard/penalty-flag-amd64/status "Docker Repository on Quay")](https://quay.io/repository/brianredbeard/penalty-flag-amd64) |
+| quay.io/brianredbeard/penalty-flag-arm   |  [![Docker Repository on Quay](https://quay.io/repository/brianredbeard/penalty-flag-arm/status "Docker Repository on Quay")](https://quay.io/repository/brianredbeard/penalty-flag-arm) |
+| quay.io/brianredbeard/penalty-flag-arm64   |  [![Docker Repository on Quay](https://quay.io/repository/brianredbeard/penalty-flag-arm64/status "Docker Repository on Quay")](https://quay.io/repository/brianredbeard/penalty-flag-arm64) |
+| quay.io/brianredbeard/penalty-flag-ppc64le   |  [![Docker Repository on Quay](https://quay.io/repository/brianredbeard/penalty-flag-ppc64le/status "Docker Repository on Quay")](https://quay.io/repository/brianredbeard/penalty-flag-ppc64le) |
 
 # About
 
