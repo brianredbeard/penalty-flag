@@ -10,7 +10,7 @@ DOCKER?=docker
 SED_I?=sed -i
 GOHOSTOS ?= $(shell go env GOHOSTOS)
 
-PKG=github.com/brianredbeard/color-default/images/penalty-flag
+PKG=github.com/brianredbeard/penalty-flag/penalty-flag
 
 ifeq ($(GOHOSTOS),darwin)
   SED_I=sed -i ''
