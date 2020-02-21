@@ -4,13 +4,13 @@ BUILDTAGS=
 
 # Use the 0.0 tag for testing, it shouldn't clobber any release builds
 TAG?=0.3
-REGISTRY?=quay.io/kubernetes-ingress-controller
+REGISTRY?=quay.io/brianredbeard
 GOOS?=linux
 DOCKER?=docker
 SED_I?=sed -i
 GOHOSTOS ?= $(shell go env GOHOSTOS)
 
-PKG=k8s.io/ingress-nginx/images/custom-error-pages
+PKG=github.com/brianredbeard/color-default/images/custom-error-pages
 
 ifeq ($(GOHOSTOS),darwin)
   SED_I=sed -i ''
@@ -62,7 +62,10 @@ all-container: $(addprefix sub-container-,$(ALL_ARCH))
 
 all-push: $(addprefix sub-push-,$(ALL_ARCH))
 
-container: .container-$(ARCH)
+generate-pages:
+	ERR_PATH=rootfs/www/ python scripts/generate.py
+
+container: build generate-pages .container-$(ARCH)
 .container-$(ARCH):
 	cp -r ./* $(TEMP_DIR)
 	$(SED_I) 's|BASEIMAGE|$(BASEIMAGE)|g' $(DOCKERFILE)
