@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Error 404 - %{HOSTNAME}</title>
+	<title>Error 416 - %{HOSTNAME}</title>
 	<style>
 		html{
 			background-color: #F7B502;
@@ -17,9 +17,9 @@
 <body>
   <div class="">
     <div class="error-middle">
-      <h1>Error 404 - Not Found</h1>
-      <p>The 404 (Not Found) status code indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists. A 404 status code does not indicate whether this lack of representation is temporary or permanent; the 410 (Gone) status code is preferred over 404 if the origin server knows, presumably through some configurable means, that the condition is likely to be permanent.</p>
-      <p class='spec'>As defined in: <a href='http://tools.ietf.org/html/rfc7231#section-6.5.4'>RFC 7231</a></p>
+      <h1>Error 416 - Range Not Satisfiable</h1>
+      <p>The 416 (Range Not Satisfiable) status code indicates that none of the ranges in the request's Range header field (Section 3.1) overlap the current extent of the selected resource or that the set of ranges requested has been rejected due to invalid ranges or an excessive request of small or overlapping ranges.</p>
+      <p class='spec'>As defined in: <a href='http://tools.ietf.org/html/rfc7233#section-4.4'>RFC 7233</a></p>
     </div>
   </div>
 </body>

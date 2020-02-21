@@ -1,0 +1,1 @@
+{"code": 100, "name": "Continue", "message": "The 100 (Continue) status code indicates that the initial part of a request has been received and has not yet been rejected by the server. The server intends to send a final response after the request has been fully received and acted upon."}

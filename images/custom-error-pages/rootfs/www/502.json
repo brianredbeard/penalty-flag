@@ -1,0 +1,1 @@
+{"code": 502, "name": "Bad Gateway", "message": "The 502 (Bad Gateway) status code indicates that the server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request."}

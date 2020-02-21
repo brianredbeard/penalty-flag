@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Error 404 - %{HOSTNAME}</title>
+	<title>Error 208 - %{HOSTNAME}</title>
 	<style>
 		html{
-			background-color: #F7B502;
+			background-color: #138F3A;
 		}
 
 		
@@ -17,9 +17,9 @@
 <body>
   <div class="">
     <div class="error-middle">
-      <h1>Error 404 - Not Found</h1>
-      <p>The 404 (Not Found) status code indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists. A 404 status code does not indicate whether this lack of representation is temporary or permanent; the 410 (Gone) status code is preferred over 404 if the origin server knows, presumably through some configurable means, that the condition is likely to be permanent.</p>
-      <p class='spec'>As defined in: <a href='http://tools.ietf.org/html/rfc7231#section-6.5.4'>RFC 7231</a></p>
+      <h1>Error 208 - Already Reported</h1>
+      <p>The 208 (Already Reported) status code can be used inside a DAV: propstat response element to avoid enumerating the internal members of multiple bindings to the same collection repeatedly. For each binding to a collection inside the request's scope, only one will be reported with a 200 status, while subsequent DAV:response elements for all other bindings will use the 208 status, and no DAV:response elements for their descendants are included.</p>
+      <p class='spec'>As defined in: <a href='http://tools.ietf.org/html/rfc5842#section-7.1'>RFC 5842</a></p>
     </div>
   </div>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Error 404 - %{HOSTNAME}</title>
+	<title>Error 405 - %{HOSTNAME}</title>
 	<style>
 		html{
 			background-color: #F7B502;
@@ -17,9 +17,9 @@
 <body>
   <div class="">
     <div class="error-middle">
-      <h1>Error 404 - Not Found</h1>
-      <p>The 404 (Not Found) status code indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists. A 404 status code does not indicate whether this lack of representation is temporary or permanent; the 410 (Gone) status code is preferred over 404 if the origin server knows, presumably through some configurable means, that the condition is likely to be permanent.</p>
-      <p class='spec'>As defined in: <a href='http://tools.ietf.org/html/rfc7231#section-6.5.4'>RFC 7231</a></p>
+      <h1>Error 405 - Method Not Allowed</h1>
+      <p>The 405 (Method Not Allowed) status code indicates that the method received in the request-line is known by the origin server but not supported by the target resource. The origin server MUST generate an Allow header field in a 405 response containing a list of the target resource's currently supported methods.</p>
+      <p class='spec'>As defined in: <a href='http://tools.ietf.org/html/rfc7231#section-6.5.5'>RFC 7231</a></p>
     </div>
   </div>
 </body>

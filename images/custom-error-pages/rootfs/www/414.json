@@ -1,0 +1,1 @@
+{"code": 414, "name": "URI Too Long", "message": "The 414 (URI Too Long) status code indicates that the server is refusing to service the request because the request-target is longer than the server is willing to interpret."}
